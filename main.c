@@ -10,5 +10,9 @@ int main()
 	printf("Green: %s\n", color_string(green));
 	printf("Blue: %s\n", color_string(blue));
 
+	printf("%s\n", color_terminal(red, "red"));
+	printf("%s\n", color_terminal(green, "green"));
+	printf("%s\n", color_terminal(blue, "blue"));
+
 	return 0;
 }

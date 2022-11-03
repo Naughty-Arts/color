@@ -6,6 +6,7 @@ typedef struct
 	float r;
 	float g;
 	float b;
+	float a;
 } Color;
 
 extern Color black;
@@ -26,5 +27,6 @@ Color color_times(Color c, float a);
 Color color_hadamard(Color c1, Color c2);
 
 char* color_string(Color color);
+char* color_terminal(Color color, char *label);
 
 #endif

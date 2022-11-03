@@ -2,18 +2,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-Color black = { 0, 0, 0 };
-Color white = { 1, 1, 1 };
-Color gray = { 0.5, 0.5, 0.5 };
+Color black = { 0, 0, 0, 1 };
+Color white = { 1, 1, 1, 1 };
+Color gray = { 0.5, 0.5, 0.5, 1 };
 
-Color red = { 1, 0, 0 };
-Color green = { 0, 1, 0 };
-Color blue = { 0, 0, 1 };
+Color red = { 1, 0, 0, 1 };
+Color green = { 0, 1, 0, 1 };
+Color blue = { 0, 0, 1, 1 };
 
-Color cyan = { 0, 1, 1 };
-Color yellow = { 1, 1, 0 };
-Color magenta = { 1, 0, 1 };
+Color cyan = { 0, 1, 1, 1 };
+Color yellow = { 1, 1, 0, 1 };
+Color magenta = { 1, 0, 1, 1 };
 
 Color color_add(Color c1, Color c2)
 {
@@ -42,6 +43,13 @@ Color color_hadamard(Color c1, Color c2)
 char* color_string(Color color)
 {
 	char* result = malloc(sizeof(char) * 128);
-	sprintf(result, "%.5f %.5f, %.5f", color.r, color.g, color.b);
+	sprintf(result, "%.5f %.5f, %.5f, %.5f", color.r, color.g, color.b, color.a);
+	return result;
+}
+
+char* color_terminal(Color color, char *label)
+{
+	char* result = malloc(strlen(label) * 2);
+	sprintf(result, "\x1b[38;2;%.0f;%.0f;%.0fm%s\x1b[0m", color.r * 255, color.g * 255, color.b * 255, label);
 	return result;
 }
