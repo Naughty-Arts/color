@@ -6,13 +6,18 @@ int main()
 {
 	printf("------------------- Color --------------------- \n");
 
-	printf("Red: %s\n", color_string(red));
-	printf("Green: %s\n", color_string(green));
-	printf("Blue: %s\n", color_string(blue));
+	c r = red;
+	cprnt("red", r);
 
-	printf("%s\n", color_terminal(red, "red"));
-	printf("%s\n", color_terminal(green, "green"));
-	printf("%s\n", color_terminal(blue, "blue"));
+	for (int i = 0; i < 10; ++i)
+	{
+		for (int j = 0; j < 10; ++j)
+		{
+			cterm("#", r);
+		}
+		printf("\n");
+	}
+	printf("\n");
 
 	return 0;
 }
