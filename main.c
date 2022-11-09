@@ -6,7 +6,7 @@ int main()
 {
 	printf("------------------- Color --------------------- \n");
 
-	c r = red;
+	c r = cred;
 	cprnt("red", r);
 
 	for (int i = 0; i < 10; ++i)

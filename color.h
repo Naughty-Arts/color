@@ -20,14 +20,14 @@ typedef struct
 #define cprnt(l, c1) printf("%s: %f, %f, %f, %f\n", l, c1.r, c1.g, c1.b, c1.a)
 #define cterm(l, c1) printf("\x1b[38;2;%.0f;%.0f;%.0fm%s\x1b[0m", c1.r * 255, c1.g * 255, c1.b * 255, l)
 
-#define black { 0, 0, 0, 1 }
-#define white { 1, 1, 1, 1 }
-#define gray { 0.5, 0.5, 0.5, 1 }
-#define red { 1, 0, 0, 1 }
-#define green { 0, 1, 0, 1 }
-#define blue { 0, 0, 1, 1 }
-#define cyan { 0, 1, 1, 1 }
-#define yellow { 1, 1, 0, 1 }
-#define magenta { 1, 0, 1, 1 }
+#define cblack ({ c _c = { 0, 0, 0, 1 }; _c; })
+#define cwhite ({ c _c = { 1, 1, 1, 1 }; _c; })
+#define cgray ({ c _c = { 0.5, 0.5, 0.5, 1 }; _c; })
+#define cred ({ c _c = { 1, 0, 0, 1 }; _c; })
+#define cgreen ({ c _c = { 0, 1, 0, 1 }; _c; })
+#define cblue ({ c _c = { 0, 0, 1, 1 }; _c; })
+#define ccyan ({ c _c = { 0, 1, 1, 1 }; _c; })
+#define cyellow ({ c _c = { 1, 1, 0, 1 }; _c; })
+#define cmagenta ({ c _c = { 1, 0, 1, 1 }; _c; })
 
 #endif
