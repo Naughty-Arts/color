@@ -6,18 +6,10 @@ int main()
 {
 	printf("------------------- Color --------------------- \n");
 
-	c r = cred;
-	cprnt("red", r);
+	color_init();
 
-	for (int i = 0; i < 10; ++i)
-	{
-		for (int j = 0; j < 10; ++j)
-		{
-			cterm("#", r);
-		}
-		printf("\n");
-	}
-	printf("\n");
+	printf("This is imperial red: %s\n", color_term(imperial_red, "imperial red"));
+	printf("This is scarlet: %s\n", color_term(scarlet, "scarlet"));
 
 	return 0;
 }
